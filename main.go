@@ -65,5 +65,11 @@ func getMaps() map[string]map[string]string {
 }
 
 func productToMapItem(product Products, output map[string]map[string]string) {
-	// ... ISI JAWABAN KAMU PADA FUNGSI INI
+	list_output := make(map[string]string)
+	for i, v := range output[product.Pricelists.Category] {
+		list_output[i] = v
+	}
+
+	list_output[product.Pricelists.Brand] = product.Name
+	output[product.Pricelists.Category] = list_output
 }
